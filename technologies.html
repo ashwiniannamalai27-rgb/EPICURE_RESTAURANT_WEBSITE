@@ -1,0 +1,565 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="Explore the technologies, frameworks, components and web development concepts used to design and develop the ÉPICURE fine dining restaurant website.">
+
+    <meta name="keywords"
+        content="HTML, CSS, JavaScript ES6, Bootstrap 5, Bootstrap Icons, Web Development, ÉPICURE">
+
+    <meta name="author" content="ÉPICURE Web Development Team">
+
+    <title>Technologies & Components | ÉPICURE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page-specific typography and styling -->
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+            color: #f3eee4;
+            background-color: #121212;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .tech-intro {
+            max-width: 850px;
+            margin: 20px auto 0;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #aaa69d;
+            text-align: center;
+        }
+
+        .tech-card {
+            height: 100%;
+            padding: 30px 25px;
+            border: 1px solid rgba(201, 166, 107, 0.2);
+            border-radius: 8px;
+            background: #1c1c18;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-6px);
+            border-color: #c9a66b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .tech-card > i {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #c9a66b;
+            font-size: 35px;
+        }
+
+        .tech-card h3 {
+            margin-bottom: 12px;
+            color: #e4c995;
+            font-size: 26px;
+        }
+
+        .tech-card p {
+            margin-bottom: 0;
+            color: #aaa69d;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .feature-showcase-card {
+            padding: 30px;
+            border: 1px solid rgba(201, 166, 107, 0.25);
+            background: #181814;
+            border-radius: 8px;
+            height: 100%;
+            border-left: 4px solid #c9a66b;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-showcase-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-showcase-card h4 {
+            color: #e4c995;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .feature-showcase-card p {
+            color: #b0aba1;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tech-accordion .accordion-item {
+            margin-bottom: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 166, 107, 0.2);
+            border-radius: 6px;
+            background: #1c1c18;
+        }
+
+        .tech-accordion .accordion-button {
+            padding: 20px 24px;
+            background: #1c1c18;
+            color: #e4c995;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: none;
+        }
+
+        .tech-accordion .accordion-button:not(.collapsed) {
+            background: #25241e;
+            color: #e4c995;
+            border-bottom: 1px solid rgba(201, 166, 107, 0.2);
+        }
+
+        .tech-accordion .accordion-button::after {
+            filter: brightness(0) saturate(100%) invert(76%) sepia(26%) saturate(534%) hue-rotate(356deg);
+        }
+
+        .tech-accordion .accordion-body {
+            padding: 22px 24px;
+            color: #c5c0b6;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .tech-accordion code {
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(201, 166, 107, 0.12);
+            color: #e4c995;
+            font-size: 13px;
+        }
+
+        .tech-list {
+            padding-left: 20px;
+            color: #aaa69d;
+        }
+
+        .tech-list li {
+            padding: 6px 0;
+        }
+
+        .tech-badge-pill {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(201, 166, 107, 0.15);
+            color: #c9a66b;
+            border: 1px solid rgba(201, 166, 107, 0.3);
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 576px) {
+            .tech-card, .feature-showcase-card {
+                padding: 22px 18px;
+            }
+            .tech-accordion .accordion-button {
+                padding: 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand brand-font" href="index.html">
+                ÉPICURE<span>.</span>
+                <small>FINE DINING</small>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="founders.html">Founders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="technologies.html">Tech Stack</a></li>
+                    <li class="nav-item ms-xl-3 my-2 my-xl-0">
+                        <a class="btn btn-gold btn-sm px-4" href="reservation.html">
+                            Reserve a table
+                            <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero"
+            style="--page-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85')">
+            <div class="container">
+                <span class="eyebrow">BEHIND THE EXPERIENCE</span>
+                <h1>
+                    Built with craft.<br>
+                    <em>Engineered with purpose.</em>
+                </h1>
+                <p>
+                    An architectural overview of the technologies, algorithms, component libraries, and UI/UX patterns powering the ÉPICURE digital fine-dining platform.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <span class="eyebrow">SYSTEM ARCHITECTURE</span>
+                    <h2 class="section-title">A Modern Vanilla & Bootstrap Architecture</h2>
+                    <p class="tech-intro">
+                        The ÉPICURE platform is engineered using modern standards-based front-end development practices. Without heavy external frameworks, it achieves ultra-fast load times, responsive fluid layouts across all viewport sizes, and seamless state management for fine-dining interactive modules like real-time menu filtering, sommelier pairings, and multi-course menu construction.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CORE TECHNOLOGY STACK -->
+        <section class="section-pad section-soft">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <span class="eyebrow">FOUNDATION</span>
+                    <h2 class="section-title">Core Technology Stack</h2>
+                </div>
+
+                <div class="row g-4 mt-3">
+                    <!-- HTML -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="tech-card">
+                            <i class="bi bi-filetype-html"></i>
+                            <h3>HTML Semantic</h3>
+                            <p>
+                                Structured with W3C-compliant semantic tags (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>) and accessible <code>data-*</code> attributes for seamless script querying.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="tech-card">
+                            <i class="bi bi-filetype-css"></i>
+                            <h3>CSS & Keyframes</h3>
+                            <p>
+                                Custom design token system with CSS custom properties, responsive flex/grid modules, and GPU-accelerated keyframe animations for diagonal metallic sheens and soft glowing states.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap 5.3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="tech-card">
+                            <i class="bi bi-bootstrap"></i>
+                            <h3>Bootstrap 5.3.3</h3>
+                            <p>
+                                Modern mobile-first grid, responsive navigation collapses, dismissible Toasts, centered dynamic Modals, and the Offcanvas drawer for the tasting menu summary.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Modern JavaScript -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="tech-card">
+                            <i class="bi bi-filetype-js"></i>
+                            <h3>ES6+ JavaScript</h3>
+                            <p>
+                                Decoupled event-driven UI logic, dynamic currency regex formatting, multi-criteria filtering pipelines, synchronized state management, and URL parameter encoders.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SIGNATURE INTERACTIVE MODULES -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <span class="eyebrow">KEY HIGHLIGHTS</span>
+                    <h2 class="section-title">Interactive Engineering Features</h2>
+                    <p class="tech-intro">
+                        Custom interactive capabilities designed specifically for the ÉPICURE menu ecosystem.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-3">
+                    <!-- Tasting Menu Builder -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-showcase-card">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-journal-bookmark-fill text-gold fs-4"></i>
+                                <h4 class="mb-0">Tasting Menu Builder</h4>
+                            </div>
+                            <p>
+                                An interactive state-driven builder allowing patrons to select a 3-course customized dinner (Starter + Main + Dessert + Optional Drink) with real-time bill tallying and an Offcanvas drawer.
+                            </p>
+                            <div>
+                                <span class="tech-badge-pill">State Object</span>
+                                <span class="tech-badge-pill">Bootstrap Offcanvas</span>
+                                <span class="tech-badge-pill">Deep Link URL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multi-Vector Filtering Engine -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-showcase-card">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-funnel text-gold fs-4"></i>
+                                <h4 class="mb-0">Multi-Vector Filter Engine</h4>
+                            </div>
+                            <p>
+                                A unified filtration loop executing simultaneous compound checks against Category tabs, Indian Dietary badges (Veg/Non-Veg), and dynamic substring real-time search inputs.
+                            </p>
+                            <div>
+                                <span class="tech-badge-pill">Compound Logic</span>
+                                <span class="tech-badge-pill">Dataset API</span>
+                                <span class="tech-badge-pill">Live Substring Search</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sommelier Pairing Assistant -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-showcase-card">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-cup-straw text-gold fs-4"></i>
+                                <h4 class="mb-0">Food & Drink Pairing</h4>
+                            </div>
+                            <p>
+                                Cross-references menu data to render sommelier-recommended zero-proof drink and side dish complements both within modal inspection views and in a standalone interactive selector.
+                            </p>
+                            <div>
+                                <span class="tech-badge-pill">Dynamic DOM Updates</span>
+                                <span class="tech-badge-pill">Interactive Select</span>
+                                <span class="tech-badge-pill">Tasting Notes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- COMPONENT INVENTORY ACCORDION -->
+        <section class="section-pad section-soft">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">COMPONENT INVENTORY</span>
+                    <h2 class="section-title">Technical Deep Dive by Category</h2>
+                    <p class="body-copy">
+                        A detailed breakdown of all HTML elements, CSS specifications, Bootstrap APIs, and JavaScript functions utilized across the project.
+                    </p>
+                </div>
+
+                <div class="accordion tech-accordion mt-4" id="techAccordion">
+
+                    <!-- 1. HTML SEMANTICS -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htmlComponents">
+                                <i class="bi bi-code-slash me-3"></i>
+                                1. Semantic HTML & Accessible Data Architecture
+                            </button>
+                        </h3>
+                        <div id="htmlComponents" class="accordion-collapse collapse show" data-bs-parent="#techAccordion">
+                            <div class="accordion-body">
+                                Clean HTML document structures optimized for screen readers and high search engine discoverability.
+                                <ul class="tech-list mt-3">
+                                    <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;aside&gt;</code> — Semantic structural landmarks.</li>
+                                    <li><code>&lt;article class="menu-card"&gt;</code> — Self-contained dish cards containing accessible attributes.</li>
+                                    <li><code>data-category</code>, <code>data-diet</code>, <code>data-name</code> — Data attributes used by JavaScript query engines.</li>
+                                    <li><code>data-pair-drink</code>, <code>data-pair-why</code>, <code>data-pair-side</code> — Rich metadata for pairing lookups.</li>
+                                    <li><code>aria-label</code>, <code>role="button"</code>, <code>tabindex="0"</code> — WAI-ARIA standards for keyboard navigation and screen-reader accessibility.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. BOOTSTRAP 5.3 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bootstrapComponents">
+                                <i class="bi bi-bootstrap me-3"></i>
+                                2. Bootstrap 5.3 Components & Grid Systems
+                            </button>
+                        </h3>
+                        <div id="bootstrapComponents" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+                            <div class="accordion-body">
+                                Utilizing the responsive modularity of Bootstrap 5.3 without relying on jQuery:
+                                <ul class="tech-list mt-3">
+                                    <li><strong>Offcanvas (<code>#tastingOffcanvas</code>):</strong> Sliding side drawer rendering the multi-course progression and checkout link.</li>
+                                    <li><strong>Modal Dialog (<code>#dishModal</code>):</strong> Centered modal inspecting dish ingredients, ratings, prices, and pairing notes.</li>
+                                    <li><strong>Grid System:</strong> <code>.container</code>, <code>.row</code>, <code>.col-md-6</code>, <code>.col-lg-4</code> with responsive gutter utilities (<code>g-4</code>).</li>
+                                    <li><strong>Toast (<code>#siteToast</code>):</strong> Fixed-position notifications for user confirmations.</li>
+                                    <li><strong>Responsive Navbar:</strong> Collapsing mobile menu with burger toggle and gold CTA reservation link.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. CSS & ANIMATIONS -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssComponents">
+                                <i class="bi bi-palette me-3"></i>
+                                3. Custom CSS & Hardware-Accelerated Keyframes
+                            </button>
+                        </h3>
+                        <div id="cssComponents" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+                            <div class="accordion-body">
+                                Advanced CSS crafting the signature dark luxury atmosphere:
+                                <ul class="tech-list mt-3">
+                                    <li><code>@keyframes goldSheen</code> — Diagonal metallic shimmer sweeping across menu cards on hover.</li>
+                                    <li><code>@keyframes menuFadeIn</code> — Smooth scale and translation entrance for cards matching active filters.</li>
+                                    <li><code>@keyframes slideUpTasting</code> — Smooth slide-in animation for the floating tasting menu bar.</li>
+                                    <li><strong>Dietary Indicators:</strong> Indian standard green circle (Veg) and red triangle (Non-Veg) badge styling.</li>
+                                    <li><strong>Gold Theme Tokens:</strong> Consistent branding palette using <code>#c5a059</code> and <code>#e6ca85</code> accents against deep charcoal backgrounds.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. JAVASCRIPT LOGIC -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#jsComponents">
+                                <i class="bi bi-file-earmark-code me-3"></i>
+                                4. JavaScript ES6+ Architecture & Algorithms
+                            </button>
+                        </h3>
+                        <div id="jsComponents" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+                            <div class="accordion-body">
+                                Clean, performant client-side scripts written in modern vanilla JavaScript:
+                                <ul class="tech-list mt-3">
+                                    <li><strong>Compound Filter Pipeline:</strong> Evaluates active category, active dietary restriction, and search keyword in a single linear pass (<code>O(N)</code>).</li>
+                                    <li><strong>Tasting Menu State Machine:</strong> Maintains an internal state object tracking courses, computing totals, and updating UI slots dynamically.</li>
+                                    <li><strong>Currency Parser & Formatter:</strong> Converts INR strings into integers, accumulating bill totals and rendering formatted strings with Indian number formatting (<code>toLocaleString('en-IN')</code>).</li>
+                                    <li><strong>Deep Link Generator:</strong> Encodes user-selected menu items into clean URL search parameters (<code>encodeURIComponent</code>) passed directly to <code>reservation.html</code>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <a class="footer-brand brand-font" href="index.html">
+                        ÉPICURE<span>.</span>
+                    </a>
+                    <p class="footer-copy">
+                        Thoughtful cuisine. Genuine hospitality.<br>
+                        Memories made around the table.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>EXPLORE</h6>
+                    <a href="about.html">Our story</a>
+                    <a href="founders.html">Our people</a>
+                    <a href="menu.html">The menu</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>VISIT</h6>
+                    <a href="reservation.html">Reservations</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="reviews.html">Guest stories</a>
+                </div>
+
+                <div class="col-lg-3">
+                    <h6>OPENING HOURS</h6>
+                    <p class="footer-copy mb-1">Tuesday – Sunday</p>
+                    <p class="footer-copy">12:00 PM – 10:30 PM</p>
+                    <a href="reservation.html" class="text-link">
+                        Plan your visit <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 ÉPICURE. All rights reserved.</span>
+                <span>Made with care <i class="bi bi-heart-fill"></i></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Shared JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

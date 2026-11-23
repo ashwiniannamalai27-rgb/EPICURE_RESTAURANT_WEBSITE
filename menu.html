@@ -1,0 +1,1486 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ÉPICURE — thoughtful cuisine, warm hospitality and memorable dining experiences.">
+
+    <title>Our Menu | ÉPICURE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-dark fixed-top navbar-custom">
+    <div class="container">
+
+        <a class="navbar-brand brand-font" href="index.html">
+            ÉPICURE<span>.</span>
+            <small>FINE DINING</small>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="founders.html">Founders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="technologies.html">Tech Stack</a></li>
+
+                <li class="nav-item ms-xl-3 my-2 my-xl-0">
+                    <a class="btn btn-gold btn-sm px-4" href="reservation.html">
+                        Reserve a table
+                        <i class="bi bi-arrow-up-right ms-1"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="page-hero"
+    style="--page-image:url('https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1800&q=85')">
+
+    <div class="container">
+        <span class="eyebrow">FRESH IDEAS, BEAUTIFUL FLAVOURS</span>
+
+        <h1>
+            Made with care.<br>
+            <em>Served with joy.</em>
+        </h1>
+
+        <p>Explore a menu inspired by seasons, stories and ingredients.</p>
+    </div>
+</section>
+
+
+<!-- MENU SECTION -->
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <span class="eyebrow">THE MENU</span>
+            <h2 class="section-title">Find your favourite.</h2>
+            <p class="body-copy">
+                Discover thoughtfully prepared dishes made with fresh ingredients.
+                Click any dish to explore its ingredients, pairings, and guest reviews.
+            </p>
+        </div>
+
+
+        <!-- FILTER AND SEARCH TOOLBAR -->
+        <div class="menu-toolbar mt-4 d-flex flex-wrap justify-content-center align-items-center gap-3">
+
+            <!-- CATEGORY FILTER BUTTONS -->
+            <div class="btn-group flex-wrap justify-content-center"
+                role="group" aria-label="Filter menu by category">
+
+                <button type="button" class="btn btn-outline-gold active menu-filter" data-filter="all">All</button>
+                <button type="button" class="btn btn-outline-gold menu-filter" data-filter="starters">Starters</button>
+                <button type="button" class="btn btn-outline-gold menu-filter" data-filter="mains">Mains</button>
+                <button type="button" class="btn btn-outline-gold menu-filter" data-filter="desserts">Desserts</button>
+                <button type="button" class="btn btn-outline-gold menu-filter" data-filter="drinks">Drinks</button>
+
+            </div>
+
+            <!-- DIETARY FILTER BUTTONS -->
+            <div class="btn-group dietary-filter flex-wrap justify-content-center"
+                role="group" aria-label="Dietary filter">
+
+                <button type="button" class="btn btn-outline-gold active" data-diet="all">All Foods</button>
+                <button type="button" class="btn btn-outline-gold" data-diet="vegetarian">
+                    <i class="bi bi-circle-fill text-success me-1" style="font-size: 0.65rem;"></i> Vegetarian
+                </button>
+                <button type="button" class="btn btn-outline-gold" data-diet="non-vegetarian">
+                    <i class="bi bi-triangle-fill text-danger me-1" style="font-size: 0.65rem;"></i> Non-Vegetarian
+                </button>
+
+            </div>
+
+            <!-- SEARCH INPUT -->
+            <div class="input-group menu-search" style="max-width: 300px;">
+                <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input id="menuSearch" type="search"
+                    class="form-control"
+                    placeholder="Search dishes...">
+            </div>
+
+        </div>
+
+
+        <!-- MENU ITEMS GRID -->
+        <div class="row g-4 mt-2" id="menuGrid">
+
+            <!-- STARTERS -->
+
+            <!-- Burrata Toast (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="starters" data-diet="vegetarian" data-name="burrata garden toast">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Burrata Garden Toast"
+                    data-price="₹590"
+                    data-description="Toasted sourdough topped with creamy burrata, garden tomatoes and fresh basil oil."
+                    data-ingredients="Sourdough bread, fresh burrata cheese, cherry tomatoes, basil leaves, olive oil, black pepper and sea salt."
+                    data-review="A beautiful combination of fresh flavours. The creamy burrata and crispy toast were excellent!"
+                    data-rating="5.0"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Wild Mushroom Soup"
+                    data-pair-why="The bright citrus acidity and sparkling bubbles cut delicately through the rich, creamy burrata cheese.">
+
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85" alt="Burrata toast">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Burrata Garden Toast</h3>
+                            <span class="price">₹590</span>
+                        </div>
+
+                        <p>Toasted sourdough, creamy burrata, garden tomatoes and basil oil.</p>
+                        
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">STARTER</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Wild Mushroom Soup (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="starters" data-diet="vegetarian" data-name="wild mushroom soup">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Wild Mushroom Soup"
+                    data-price="₹420"
+                    data-description="A silky and comforting mushroom soup finished with aromatic herbs."
+                    data-ingredients="Button mushrooms, garlic, onion, vegetable stock, fresh cream, thyme, black pepper and sourdough crumbs."
+                    data-review="Rich, smooth and comforting. The mushroom flavour was wonderful."
+                    data-rating="4.9"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Burrata Garden Toast"
+                    data-pair-why="Earthy forest mushrooms match cleanly against basil herbs and gentle berry sweetness.">
+
+                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85" alt="Mushroom soup">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Wild Mushroom Soup</h3>
+                            <span class="price">₹420</span>
+                        </div>
+
+                        <p>Silky mushroom soup, herbs and toasted sourdough crumbs.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">STARTER</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Crispy Paneer Bites (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="starters" data-diet="vegetarian" data-name="crispy paneer bites">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Crispy Paneer Bites"
+                    data-price="₹480"
+                    data-description="Golden paneer bites served with a refreshing mint dip."
+                    data-ingredients="Paneer, corn flour, breadcrumbs, ginger, garlic, chilli powder, coriander, mint, yoghurt and lemon."
+                    data-review="Crispy outside and soft inside. The mint dip made it even better!"
+                    data-rating="4.8"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Strawberry Basil Lemonade"
+                    data-pair-why="Ginger-mint zing complements aromatic spices and cleanses the palate after deep crisping.">
+
+                    <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=85" alt="Paneer dish">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Crispy Paneer Bites</h3>
+                            <span class="price">₹480</span>
+                        </div>
+
+                        <p>Golden paneer bites with a refreshing mint dip.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">STARTER</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Crispy Calamari Rings (NON-VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="starters" data-diet="non-vegetarian" data-name="crispy calamari rings">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Crispy Calamari Rings"
+                    data-price="₹540"
+                    data-description="Golden fried calamari dusted with smoked paprika and served with lemon-garlic aioli."
+                    data-ingredients="Fresh squid, seasoned flour, smoked paprika, garlic aioli, parsley, sea salt and lemon wedges."
+                    data-review="Incredibly tender inside and delightfully crisp outside. The dip is superb!"
+                    data-rating="4.9"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Roasted Vegetable Platter"
+                    data-pair-why="Sparkling citrus lifts the smoked paprika crumb and balances rich garlic aioli.">
+
+                    <img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=900&q=85" alt="Crispy Calamari Rings">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Crispy Calamari Rings</h3>
+                            <span class="price">₹540</span>
+                        </div>
+
+                        <p>Tender calamari, smoked paprika dusting and garlic aioli.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">SEAFOOD</span>
+                            <span class="badge border border-danger text-danger bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-triangle-fill" style="font-size: 0.55rem;"></i> NON-VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Smoked Chicken Bruschetta (NON-VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="starters" data-diet="non-vegetarian" data-name="smoked chicken bruschetta">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Smoked Chicken Bruschetta"
+                    data-price="₹510"
+                    data-description="Charred country bread topped with tender smoked chicken, sun-dried tomatoes and herb crema."
+                    data-ingredients="Smoked chicken breast, artisan sourdough, cherry tomatoes, balsamic reduction, olive oil and fresh basil."
+                    data-review="Smoky notes blend harmoniously with sweet balsamic glaze. A must-try starter!"
+                    data-rating="4.8"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Wild Mushroom Soup"
+                    data-pair-why="Sweet macerated strawberries and holy basil elevate smoky woodfire chicken undertones.">
+
+                    <img src="https://images.unsplash.com/photo-1506280754576-f6fa8a873550?auto=format&fit=crop&w=900&q=85" alt="Smoked Chicken Bruschetta">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Smoked Chicken Bruschetta</h3>
+                            <span class="price">₹510</span>
+                        </div>
+
+                        <p>Smoked chicken, sun-dried tomatoes and herb crema.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">CHEF'S PICK</span>
+                            <span class="badge border border-danger text-danger bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-triangle-fill" style="font-size: 0.55rem;"></i> NON-VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- MAINS -->
+
+            <!-- Wild Herb Risotto (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="vegetarian" data-name="wild herb risotto">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Wild Herb Risotto"
+                    data-price="₹1,150"
+                    data-description="Creamy Italian-style rice prepared with garden herbs and seasonal greens."
+                    data-ingredients="Arborio rice, vegetable stock, parmesan cheese, butter, garlic, onion, parsley, thyme and seasonal vegetables."
+                    data-review="Perfectly creamy and full of flavour. One of the best dishes on the menu!"
+                    data-rating="5.0"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Burrata Garden Toast"
+                    data-pair-why="The refreshing citrus flavour balances the creamy arborio rice and velvety parmesan glaze.">
+
+                    <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=900&q=85" alt="Herb risotto">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Wild Herb Risotto</h3>
+                            <span class="price">₹1,150</span>
+                        </div>
+
+                        <p>Creamy rice, garden herbs, parmesan and seasonal greens.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">CHEF'S PICK</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Herb Grilled Chicken (NON-VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="non-vegetarian" data-name="herb grilled chicken">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Herb-Grilled Chicken"
+                    data-price="₹980"
+                    data-description="Tender chicken marinated with herbs and served with roasted vegetables."
+                    data-ingredients="Chicken breast, rosemary, thyme, garlic, olive oil, lemon juice, potatoes, carrots, beans and pepper jus."
+                    data-review="The chicken was tender and the seasoning was excellent. Great presentation too!"
+                    data-rating="4.9"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Roasted Vegetable Platter"
+                    data-pair-why="Fresh citrus and herbal thyme harmonize effortlessly with savory pan jus.">
+
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85" alt="Grilled chicken">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Herb-Grilled Chicken</h3>
+                            <span class="price">₹980</span>
+                        </div>
+
+                        <p>Herb-marinated chicken, roasted vegetables and pepper jus.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">HOUSE FAVOURITE</span>
+                            <span class="badge border border-danger text-danger bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-triangle-fill" style="font-size: 0.55rem;"></i> NON-VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Pan-Seared Atlantic Salmon (NON-VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="non-vegetarian" data-name="pan seared atlantic salmon">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Pan-Seared Atlantic Salmon"
+                    data-price="₹1,280"
+                    data-description="Crispy-skin Atlantic salmon fillet rested over crushed baby potatoes and lemon-dill butter."
+                    data-ingredients="Salmon fillet, asparagus, baby potatoes, fresh dill, unsalted butter, lemon zest, capers and olive oil."
+                    data-review="Crispy skin, succulent flaky fish, and the lemon-dill butter sauce is divine."
+                    data-rating="5.0"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Burrata Garden Toast"
+                    data-pair-why="Crisp bubbles and lime zest enliven succulent, omega-rich salmon and lemon butter emulsion.">
+
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=85" alt="Atlantic Salmon">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Pan-Seared Atlantic Salmon</h3>
+                            <span class="price">₹1,280</span>
+                        </div>
+
+                        <p>Atlantic salmon, crushed potatoes and lemon-dill butter.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">FINE SEAFOOD</span>
+                            <span class="badge border border-danger text-danger bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-triangle-fill" style="font-size: 0.55rem;"></i> NON-VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Slow-Braised Lamb Shank (NON-VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="non-vegetarian" data-name="slow braised lamb shank">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Slow-Braised Lamb Shank"
+                    data-price="₹1,350"
+                    data-description="Fork-tender lamb shank braised for 8 hours in rosemary jus, paired with creamy potato puree."
+                    data-ingredients="Australian lamb shank, red reduction, rosemary, garlic, butter mash, roasted heirloom carrots and herbs."
+                    data-review="Melt-in-your-mouth tender with intensely flavourful rosemary gravy."
+                    data-rating="4.9"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Wild Mushroom Soup"
+                    data-pair-why="Tart strawberry acidity acts as a refreshing counterpoint to deeply caramelized red gravy.">
+
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85" alt="Braised Lamb Shank">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Slow-Braised Lamb Shank</h3>
+                            <span class="price">₹1,350</span>
+                        </div>
+
+                        <p>8-hour braised lamb shank, rosemary jus and silky potato mash.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">CHEF'S SPECIAL</span>
+                            <span class="badge border border-danger text-danger bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-triangle-fill" style="font-size: 0.55rem;"></i> NON-VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Creamy Pesto Pasta (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="vegetarian" data-name="creamy pesto pasta">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Creamy Pesto Pasta"
+                    data-price="₹850"
+                    data-description="Freshly prepared pasta tossed in a creamy basil pesto sauce."
+                    data-ingredients="Penne pasta, fresh basil, parmesan, pine nuts, garlic, olive oil, cream, cherry tomatoes and black pepper."
+                    data-review="The pesto sauce tasted fresh and the pasta was cooked perfectly."
+                    data-rating="4.8"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Burrata Garden Toast"
+                    data-pair-why="Bright sparkling orange and lemon accentuate pine nuts and freshly ground basil notes.">
+
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85" alt="Pesto pasta">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Creamy Pesto Pasta</h3>
+                            <span class="price">₹850</span>
+                        </div>
+
+                        <p>Fresh pasta tossed in creamy basil pesto sauce.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">CHEF'S SPECIAL</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Roasted Vegetable Platter (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="mains" data-diet="vegetarian" data-name="roasted vegetable platter">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Roasted Vegetable Platter"
+                    data-price="₹760"
+                    data-description="A colourful selection of seasonal vegetables with a delicate herb dressing."
+                    data-ingredients="Zucchini, bell peppers, broccoli, baby potatoes, carrots, olive oil, rosemary, garlic and balsamic dressing."
+                    data-review="Fresh, colourful and beautifully presented. A lovely vegetarian option."
+                    data-rating="4.7"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Wild Mushroom Soup"
+                    data-pair-why="Fruity berry profiles match balsamic reductions and fire-roasted root vegetables.">
+
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Vegetable platter">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Roasted Vegetable Platter</h3>
+                            <span class="price">₹760</span>
+                        </div>
+
+                        <p>Seasonal roasted vegetables with delicate herb dressing.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">MAIN</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- DESSERTS -->
+
+            <!-- Dark Chocolate Mousse (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="desserts" data-diet="vegetarian" data-name="dark chocolate mousse">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Dark Chocolate Mousse"
+                    data-price="₹520"
+                    data-description="Velvety dark chocolate mousse with praline crumble and fresh berries."
+                    data-ingredients="Dark chocolate, fresh cream, cocoa powder, sugar, vanilla, hazelnuts, praline and fresh berries."
+                    data-review="A perfect dessert for chocolate lovers. Rich but wonderfully balanced!"
+                    data-rating="5.0"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Classic Cheesecake"
+                    data-pair-why="Ripe berry aromatics highlight dark single-origin chocolate acidity and roasted cocoa beans.">
+
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85" alt="Chocolate mousse">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Dark Chocolate Mousse</h3>
+                            <span class="price">₹520</span>
+                        </div>
+
+                        <p>Velvety chocolate mousse, praline crumble and berries.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">HOUSE SPECIAL</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Classic Cheesecake (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="desserts" data-diet="vegetarian" data-name="classic cheesecake">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Classic Cheesecake"
+                    data-price="₹490"
+                    data-description="A smooth baked cheesecake with a buttery biscuit base."
+                    data-ingredients="Cream cheese, digestive biscuits, butter, sugar, eggs, vanilla extract, fresh cream and berry sauce."
+                    data-review="Smooth, creamy and not too sweet. The berry sauce was a lovely touch."
+                    data-rating="4.9"
+                    data-pair-drink="Garden Citrus Cooler"
+                    data-pair-side="Vanilla Berry Panna Cotta"
+                    data-pair-why="Citrus tonic fizz relieves thick cream cheese crusts for a silky, lingering finale.">
+
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=85" alt="Cheesecake">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Classic Cheesecake</h3>
+                            <span class="price">₹490</span>
+                        </div>
+
+                        <p>Baked cheesecake with a buttery biscuit base.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">DESSERT</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Vanilla Berry Panna Cotta (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="desserts" data-diet="vegetarian" data-name="vanilla berry panna cotta">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Vanilla Berry Panna Cotta"
+                    data-price="₹450"
+                    data-description="Delicate vanilla panna cotta set with agar-agar, served with bright seasonal berry sauce."
+                    data-ingredients="Fresh cream, whole milk, Madagascar vanilla, sugar, agar-agar and farm-fresh berry compote."
+                    data-review="Light, delicate and beautifully presented. A lovely way to finish dinner."
+                    data-rating="4.8"
+                    data-pair-drink="Strawberry Basil Lemonade"
+                    data-pair-side="Dark Chocolate Mousse"
+                    data-pair-why="Mirrored strawberry notes enrich warm bourbon vanilla and delicate set custard.">
+
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85" alt="Berry dessert">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Vanilla Berry Panna Cotta</h3>
+                            <span class="price">₹450</span>
+                        </div>
+
+                        <p>Vanilla panna cotta with seasonal berry sauce.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">HOUSE SPECIAL</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- DRINKS -->
+
+            <!-- Garden Citrus Cooler (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="drinks" data-diet="vegetarian" data-name="garden citrus cooler">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Garden Citrus Cooler"
+                    data-price="₹290"
+                    data-description="A refreshing citrus drink with mint and a gentle hint of ginger."
+                    data-ingredients="Fresh orange juice, lemon juice, mint leaves, ginger, sparkling water, ice and a little sugar syrup."
+                    data-review="Refreshing and not overly sweet. Perfect with the main course!"
+                    data-rating="4.9"
+                    data-pair-drink="Burrata Garden Toast"
+                    data-pair-side="Wild Herb Risotto"
+                    data-pair-why="Designed as a versatile palate cleanser throughout multifaceted tasting menus.">
+
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85" alt="Garden Citrus Cooler">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Garden Citrus Cooler</h3>
+                            <span class="price">₹290</span>
+                        </div>
+
+                        <p>Fresh citrus, mint, sparkling water and ginger.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">ZERO-PROOF</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Strawberry Basil Lemonade (VEG) -->
+            <div class="col-md-6 col-lg-4 menu-entry"
+                data-category="drinks" data-diet="vegetarian" data-name="strawberry basil lemonade">
+
+                <article class="menu-card dish-clickable"
+                    tabindex="0" role="button"
+                    data-name="Strawberry Basil Lemonade"
+                    data-price="₹320"
+                    data-description="A refreshing blend of strawberries, lemon and aromatic basil."
+                    data-ingredients="Fresh strawberries, lemon juice, basil leaves, water, ice and sugar syrup."
+                    data-review="Beautiful colour and a refreshing taste. Loved the strawberry and basil combination!"
+                    data-rating="4.8"
+                    data-pair-drink="Smoked Chicken Bruschetta"
+                    data-pair-side="Dark Chocolate Mousse"
+                    data-pair-why="The floral notes of sweet basil contrast gracefully with grilled meat and intense cocoa.">
+
+                    <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=900&q=85" alt="Strawberry Basil Lemonade">
+
+                    <div class="menu-card-body">
+                        <div class="d-flex justify-content-between gap-3">
+                            <h3>Strawberry Basil Lemonade</h3>
+                            <span class="price">₹320</span>
+                        </div>
+
+                        <p>Strawberries, fresh lemon and aromatic basil.</p>
+
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <span class="food-tag">ZERO-PROOF</span>
+                            <span class="badge border border-success text-success bg-transparent d-inline-flex align-items-center gap-1">
+                                <i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i> VEG
+                            </span>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-gold btn-sm w-100 add-tasting-btn">
+                            <i class="bi bi-plus-circle me-1"></i> Add to Tasting Menu
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <p id="noMenuResults" class="text-center text-muted mt-5 d-none">
+            No dishes match your selected filter or search criteria.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- SIGNATURE FEATURE: FOOD & BEVERAGE PAIRING ASSISTANT -->
+<section class="section-pad pt-0" id="pairingAssistantSection">
+    <div class="container">
+        <div class="p-4 p-lg-5 rounded-4 border border-gold" style="background: linear-gradient(145deg, #161616 0%, #1e1b15 100%);">
+            
+            <div class="row align-items-center g-4">
+                <div class="col-lg-5">
+                    <span class="eyebrow text-gold"><i class="bi bi-stars me-1"></i> SOMMELIER & CHEF RECOMMENDATION</span>
+                    <h2 class="brand-font display-6 text-white mb-3">AI Food Pairing Assistant</h2>
+                    <p class="body-copy text-secondary mb-4">
+                        Select any gourmet creation to unveil its sommelier-tested companion beverage, complimentary side, and tasting notes.
+                    </p>
+
+                    <!-- DISH SELECTOR DROPDOWN -->
+                    <label for="pairingSelect" class="form-label text-gold small text-uppercase fw-semibold">Choose a Dish:</label>
+                    <select id="pairingSelect" class="form-select bg-dark text-white border-gold py-2">
+                        <option value="burrata garden toast">Burrata Garden Toast (Veg)</option>
+                        <option value="wild mushroom soup">Wild Mushroom Soup (Veg)</option>
+                        <option value="crispy paneer bites">Crispy Paneer Bites (Veg)</option>
+                        <option value="crispy calamari rings">Crispy Calamari Rings (Non-Veg)</option>
+                        <option value="smoked chicken bruschetta">Smoked Chicken Bruschetta (Non-Veg)</option>
+                        <option value="wild herb risotto" selected>Wild Herb Risotto (Chef's Pick)</option>
+                        <option value="herb grilled chicken">Herb-Grilled Chicken (Non-Veg)</option>
+                        <option value="pan seared atlantic salmon">Pan-Seared Atlantic Salmon (Non-Veg)</option>
+                        <option value="slow braised lamb shank">Slow-Braised Lamb Shank (Non-Veg)</option>
+                        <option value="creamy pesto pasta">Creamy Pesto Pasta (Veg)</option>
+                        <option value="roasted vegetable platter">Roasted Vegetable Platter (Veg)</option>
+                        <option value="dark chocolate mousse">Dark Chocolate Mousse (Veg)</option>
+                        <option value="classic cheesecake">Classic Cheesecake (Veg)</option>
+                        <option value="vanilla berry panna cotta">Vanilla Berry Panna Cotta (Veg)</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- PAIRING RESULT CARD -->
+                    <div class="card bg-black border border-gold p-4 rounded-3 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge border border-gold text-gold px-3 py-2 text-uppercase" id="selectedDishBadge">
+                                Selected Dish
+                            </span>
+                            <h4 class="brand-font text-white mb-0" id="assistantDishName">Wild Herb Risotto</h4>
+                        </div>
+
+                        <hr class="border-secondary my-2">
+
+                        <div class="row g-3 my-2">
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded bg-dark border border-secondary h-100">
+                                    <small class="text-gold text-uppercase fw-bold d-block mb-1">
+                                        <i class="bi bi-cup-straw me-1"></i> Recommended Drink
+                                    </small>
+                                    <h5 class="text-white mb-0" id="assistantDrink">Garden Citrus Cooler</h5>
+                                    <small class="text-secondary">Signature Zero-Proof Beverage</small>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded bg-dark border border-secondary h-100">
+                                    <small class="text-gold text-uppercase fw-bold d-block mb-1">
+                                        <i class="bi bi-egg-fried me-1"></i> Suggested Complement
+                                    </small>
+                                    <h5 class="text-white mb-0" id="assistantSide">Burrata Garden Toast</h5>
+                                    <small class="text-secondary">Appetizer Pairing</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 p-3 rounded" style="background: rgba(197, 160, 89, 0.08); border-left: 3px solid #c5a059;">
+                            <small class="text-gold fw-bold d-block mb-1"><i class="bi bi-journal-text me-1"></i> Why This Pairing Works:</small>
+                            <p class="mb-0 text-white-50 small" id="assistantReason">
+                                The refreshing citrus flavour and lively bubbles balance the creamy arborio rice and rich parmesan notes without overpowering delicate herbs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FLOATING TASTING MENU BAR -->
+<aside id="tastingBar" class="position-fixed bottom-0 start-50 translate-middle-x mb-4 z-3 d-none">
+    <div class="card bg-black border border-gold shadow-lg px-4 py-3 rounded-pill d-flex flex-row align-items-center gap-4">
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-journal-bookmark-fill text-gold fs-5"></i>
+            <div>
+                <span class="text-white small fw-bold d-block">Curated Tasting Menu</span>
+                <small class="text-secondary" id="tastingSummaryText">0 of 3 Courses Selected</small>
+            </div>
+        </div>
+        <div class="vr bg-secondary opacity-50 my-1"></div>
+        <div>
+            <span class="text-secondary small d-block">Estimated Total</span>
+            <span class="text-gold fw-bold" id="tastingTotalAmount">₹0</span>
+        </div>
+        <button class="btn btn-gold btn-sm rounded-pill px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#tastingOffcanvas">
+            View Menu <i class="bi bi-chevron-up ms-1"></i>
+        </button>
+    </div>
+</aside>
+
+<!-- TASTING MENU OFFCANVAS DRAWER -->
+<div class="offcanvas offcanvas-end bg-dark text-white border-start border-gold" tabindex="-1" id="tastingOffcanvas" aria-labelledby="tastingMenuLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <div>
+            <span class="eyebrow text-gold d-block">ÉPICURE EXPERIENCE</span>
+            <h5 class="offcanvas-title brand-font text-white" id="tastingMenuLabel">Your Tasting Menu</h5>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <div>
+            <p class="text-secondary small mb-3">
+                Craft a bespoke 3-course dinner pairing. We will prepare your table according to this progression.
+            </p>
+
+            <!-- SLOTS LIST -->
+            <div class="d-flex flex-column gap-3" id="tastingSlots">
+                <!-- Starter Slot -->
+                <div class="p-3 rounded bg-black border border-secondary" id="slot-starters">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge border border-gold text-gold">Course 1: Starter</span>
+                        <button class="btn btn-sm text-danger p-0 d-none remove-slot-btn" data-course="starters"><i class="bi bi-x-circle"></i></button>
+                    </div>
+                    <h6 class="text-white mb-0 slot-name">No starter selected</h6>
+                    <small class="text-gold slot-price">Choose from Starters</small>
+                </div>
+                    
+
+                <!-- Main Course Slot -->
+                <div class="p-3 rounded bg-black border border-secondary" id="slot-mains">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge border border-gold text-gold">Course 2: Main</span>
+                        <button class="btn btn-sm text-danger p-0 d-none remove-slot-btn" data-course="mains"><i class="bi bi-x-circle"></i></button>
+                    </div>
+                    <h6 class="text-white mb-0 slot-name">No main course selected</h6>
+                    <small class="text-gold slot-price">Choose from Mains</small>
+                </div>
+
+                <!-- Dessert Slot -->
+                <div class="p-3 rounded bg-black border border-secondary" id="slot-desserts">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge border border-gold text-gold">Course 3: Dessert</span>
+                        <button class="btn btn-sm text-danger p-0 d-none remove-slot-btn" data-course="desserts"><i class="bi bi-x-circle"></i></button>
+                    </div>
+                    <h6 class="text-white mb-0 slot-name">No dessert selected</h6>
+                    <small class="text-gold slot-price">Choose from Desserts</small>
+                </div>
+
+                <!-- Beverage Slot (Optional) -->
+                <div class="p-3 rounded bg-black border border-secondary" id="slot-drinks">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge border border-secondary text-secondary">Beverage Pairing</span>
+                        <button class="btn btn-sm text-danger p-0 d-none remove-slot-btn" data-course="drinks"><i class="bi bi-x-circle"></i></button>
+                    </div>
+                    <h6 class="text-white mb-0 slot-name">No beverage selected</h6>
+                    <small class="text-gold slot-price">Optional Drink</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOTAL & CHECKOUT -->
+        <div class="pt-3 border-top border-secondary mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary">Estimated Bill:</span>
+                <span class="h4 text-gold mb-0 fw-bold" id="drawerTotalPrice">₹0</span>
+            </div>
+            <a href="reservation.html" id="reserveWithTastingBtn" class="btn btn-gold w-100 py-2">
+                Reserve Table with this Menu <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            <button class="btn btn-link text-secondary btn-sm w-100 mt-2 text-decoration-none" id="clearTastingBtn">
+                Reset Tasting Menu
+            </button>
+        </div>
+    </div>
+</div>
+
+</main>
+<!-- DYNAMIC TASTING ITEMS DRAWER -->
+<div class="offcanvas offcanvas-end bg-dark text-white border-start border-gold" tabindex="-1" id="tastingOffcanvas" aria-labelledby="tastingMenuLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <div>
+            <span class="eyebrow text-gold d-block">ÉPICURE EXPERIENCE</span>
+            <h5 class="offcanvas-title brand-font text-white" id="tastingMenuLabel">Your Tasting Menu</h5>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <div>
+            <p class="text-secondary small mb-3">
+                Craft a bespoke dinner pairing. Quantities can be adjusted below.
+            </p>
+
+            <!-- DYNAMIC ITEMS LIST -->
+            <div class="d-flex flex-column gap-3" id="tastingItemsList">
+                <!-- Items are added here dynamically -->
+            </div>
+            <div id="emptyTastingMsg" class="text-secondary small text-center py-4">
+                No dishes added yet. Click "+ Add to Tasting Menu" on any dish to begin.
+            </div>
+        </div>
+
+        <!-- TOTAL & CHECKOUT -->
+        <div class="pt-3 border-top border-secondary mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary">Estimated Bill:</span>
+                <span class="h4 text-gold mb-0 fw-bold" id="drawerTotalPrice">₹0</span>
+            </div>
+            <a href="reservation.html" id="reserveWithTastingBtn" class="btn btn-gold w-100 py-2">
+                Reserve Table with this Menu <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            <button class="btn btn-link text-secondary btn-sm w-100 mt-2 text-decoration-none" id="clearTastingBtn">
+                Reset Tasting Menu
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- DISH DETAILS MODAL -->
+<div class="modal fade" id="dishModal" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content dish-modal-content">
+
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow">ÉPICURE SIGNATURE MENU</span>
+                    <h2 class="modal-title dish-modal-title" id="dishTitle">
+                        Dish Name
+                    </h2>
+                </div>
+
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+
+            <div class="modal-body">
+
+                <p id="dishDescription" class="dish-description"></p>
+
+                <div class="dish-price-display" id="dishPrice"></div>
+
+                <hr class="dish-divider">
+
+                <h5><i class="bi bi-flower1"></i> Ingredients</h5>
+
+                <p id="dishIngredients" class="dish-ingredients"></p>
+
+                <hr class="dish-divider">
+
+                <!-- MODAL PAIRING SUGGESTION -->
+                <h5><i class="bi bi-cup-straw"></i> Perfect Drink Pairing</h5>
+                <div class="p-3 rounded mb-4" style="background: rgba(197, 160, 89, 0.08); border: 1px dashed #c5a059;">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong class="text-gold" id="modalPairDrink">Garden Citrus Cooler</strong>
+                        <span class="badge border border-gold text-gold">Zero-Proof</span>
+                    </div>
+                    <p class="small text-white-50 mb-0" id="modalPairWhy">
+                        The refreshing citrus balances out the rich notes of this dish.
+                    </p>
+                </div>
+
+                <hr class="dish-divider">
+
+                <h5><i class="bi bi-chat-quote"></i> Guest Review</h5>
+
+                <div class="dish-review-box">
+
+                    <div class="dish-rating">
+                        <span id="dishRating">5.0</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+
+                    <p id="dishReview"></p>
+
+                    <span id="dishReviewer" class="reviewer-name"></span>
+
+                    <p class="sample-review-note"></p>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gold px-4"
+                    data-bs-dismiss="modal">
+                    Back to Menu
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row g-4 align-items-start">
+
+            <div class="col-lg-5">
+                <a class="footer-brand brand-font" href="index.html">
+                    ÉPICURE<span>.</span>
+                </a>
+
+                <p class="footer-copy">
+                    Thoughtful cuisine. Genuine hospitality.<br>
+                    Memories made around the table.
+                </p>
+
+                <div class="social-links mt-3">
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6>EXPLORE</h6>
+                <a href="about.html">Our story</a>
+                <a href="founders.html">Our people</a>
+                <a href="menu.html">The menu</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6>VISIT</h6>
+                <a href="reservation.html">Reservations</a>
+                <a href="contact.html">Contact</a>
+                <a href="reviews.html">Guest stories</a>
+            </div>
+
+            <div class="col-lg-3">
+                <h6>OPENING HOURS</h6>
+                <p class="footer-copy mb-1">Tuesday – Sunday</p>
+                <p class="footer-copy">12:00 PM – 10:30 PM</p>
+                <a href="reservation.html" class="text-link">
+                    Plan your visit <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 ÉPICURE. All rights reserved.</span>
+            <span>Made with care <i class="bi bi-heart-fill"></i></span>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- TOAST -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="siteToast" class="toast text-bg-dark border-gold"
+        role="status" aria-live="polite" aria-atomic="true">
+
+        <div class="d-flex">
+            <div class="toast-body" id="toastMessage">Thank you!</div>
+
+            <button type="button"
+                class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- EXISTING JAVASCRIPT -->
+<script src="js/script.js"></script>
+
+
+<!-- COMBINED FILTER, MODAL, PAIRING & TASTING BUILDER JAVASCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryButtons = document.querySelectorAll(".menu-filter");
+    const dietButtons = document.querySelectorAll(".dietary-filter [data-diet]");
+    const searchInput = document.getElementById("menuSearch");
+    const menuItems = document.querySelectorAll(".menu-entry");
+    const noResults = document.getElementById("noMenuResults");
+
+    let selectedCategory = "all";
+    let selectedDiet = "all";
+
+    // 1. MENU FILTERING ENGINE
+    function filterMenu() {
+        const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
+        let visibleCount = 0;
+
+        menuItems.forEach(function (item) {
+            const category = (item.getAttribute("data-category") || "").toLowerCase().trim();
+            const diet = (item.getAttribute("data-diet") || "").toLowerCase().trim();
+            const name = (item.getAttribute("data-name") || item.textContent || "").toLowerCase();
+
+            const categoryMatch = (selectedCategory === "all" || category === selectedCategory);
+            const dietMatch = (selectedDiet === "all" || diet === selectedDiet);
+            const searchMatch = (!searchText || name.includes(searchText));
+
+            if (categoryMatch && dietMatch && searchMatch) {
+                item.classList.remove("d-none");
+                visibleCount++;
+            } else {
+                item.classList.add("d-none");
+            }
+        });
+
+        if (noResults) {
+            if (visibleCount === 0) {
+                noResults.classList.remove("d-none");
+            } else {
+                noResults.classList.add("d-none");
+            }
+        }
+    }
+
+    categoryButtons.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            selectedCategory = (this.getAttribute("data-filter") || "all").toLowerCase().trim();
+            filterMenu();
+        });
+    });
+
+    dietButtons.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            dietButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            selectedDiet = (this.getAttribute("data-diet") || "all").toLowerCase().trim();
+            filterMenu();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener("input", filterMenu);
+    }
+
+    // 2. DISH MODAL LOGIC WITH PAIRING
+    const dishModal = document.getElementById("dishModal");
+    if (dishModal) {
+        document.querySelectorAll(".dish-clickable").forEach(function (card) {
+            function showDishDetails() {
+                document.getElementById("dishTitle").textContent = card.dataset.name || "";
+                document.getElementById("dishPrice").textContent = card.dataset.price || "";
+                document.getElementById("dishDescription").textContent = card.dataset.description || "";
+                document.getElementById("dishIngredients").textContent = card.dataset.ingredients || "";
+                document.getElementById("dishReview").textContent = card.dataset.review || "";
+                document.getElementById("dishRating").textContent = card.dataset.rating || "";
+
+                // Populate Modal Pairings
+                const modalPairDrink = document.getElementById("modalPairDrink");
+                const modalPairWhy = document.getElementById("modalPairWhy");
+                if (modalPairDrink) modalPairDrink.textContent = card.dataset.pairDrink || "Garden Citrus Cooler";
+                if (modalPairWhy) modalPairWhy.textContent = card.dataset.pairWhy || "Specially curated to complement aromatic spices.";
+
+                const modal = bootstrap.Modal.getOrCreateInstance(dishModal);
+                modal.show();
+            }
+
+            card.addEventListener("click", function(e) {
+                if (e.target.closest(".add-tasting-btn")) return; // Don't open modal if adding to tasting menu
+                showDishDetails();
+            });
+
+            card.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    showDishDetails();
+                }
+            });
+        });
+    }
+
+    // 3. INTERACTIVE PAIRING ASSISTANT SECTION
+    const pairingSelect = document.getElementById("pairingSelect");
+    const assistantDishName = document.getElementById("assistantDishName");
+    const assistantDrink = document.getElementById("assistantDrink");
+    const assistantSide = document.getElementById("assistantSide");
+    const assistantReason = document.getElementById("assistantReason");
+
+    function updateAssistant(dishKey) {
+        const matchingCard = document.querySelector(`.menu-entry[data-name="${dishKey}"] .menu-card`);
+        if (matchingCard) {
+            assistantDishName.textContent = matchingCard.dataset.name;
+            assistantDrink.textContent = matchingCard.dataset.pairDrink || "Garden Citrus Cooler";
+            assistantSide.textContent = matchingCard.dataset.pairSide || "Burrata Garden Toast";
+            assistantReason.textContent = matchingCard.dataset.pairWhy || "Curated to highlight freshness and aromatic seasonings.";
+        }
+    }
+
+    if (pairingSelect) {
+        pairingSelect.addEventListener("change", function () {
+            updateAssistant(this.value);
+        });
+    }
+
+   // ==========================================
+    // MULTI-QUANTITY TASTING MENU ENGINE
+    // ==========================================
+    const tastingCart = {};
+
+    const tastingBar = document.getElementById("tastingBar");
+    const tastingSummaryText = document.getElementById("tastingSummaryText");
+    const tastingTotalAmount = document.getElementById("tastingTotalAmount");
+    const drawerTotalPrice = document.getElementById("drawerTotalPrice");
+    const reserveWithTastingBtn = document.getElementById("reserveWithTastingBtn");
+    const clearTastingBtn = document.getElementById("clearTastingBtn");
+    const tastingItemsList = document.getElementById("tastingItemsList");
+    const emptyTastingMsg = document.getElementById("emptyTastingMsg");
+
+    function parsePrice(priceStr) {
+        if (!priceStr) return 0;
+        return parseInt(priceStr.replace(/[^0-9]/g, ""), 10) || 0;
+    }
+
+    function renderTastingMenu() {
+        if (!tastingItemsList) return;
+        tastingItemsList.innerHTML = "";
+        let total = 0;
+        let totalCount = 0;
+        const selectedItems = Object.values(tastingCart);
+
+        if (selectedItems.length === 0) {
+            if (emptyTastingMsg) emptyTastingMsg.classList.remove("d-none");
+            if (tastingBar) tastingBar.classList.add("d-none");
+        } else {
+            if (emptyTastingMsg) emptyTastingMsg.classList.add("d-none");
+            if (tastingBar) tastingBar.classList.remove("d-none");
+
+            selectedItems.forEach(item => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                totalCount += item.qty;
+
+                const itemRow = document.createElement("div");
+                itemRow.className = "p-3 rounded bg-black border border-gold d-flex justify-content-between align-items-center";
+                itemRow.innerHTML = `
+                    <div>
+                        <span class="badge border border-gold text-gold mb-1 text-uppercase">${item.category}</span>
+                        <h6 class="text-white mb-0">${item.name}</h6>
+                        <small class="text-gold">₹${item.price.toLocaleString("en-IN")} each</small>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-outline-gold btn-sm px-2 py-0 decrease-qty-btn" data-name="${item.name}">−</button>
+                        <span class="text-white fw-bold px-1">${item.qty}</span>
+                        <button class="btn btn-outline-gold btn-sm px-2 py-0 increase-qty-btn" data-name="${item.name}">+</button>
+                        <button class="btn btn-sm text-danger ms-2 remove-item-btn" data-name="${item.name}"><i class="bi bi-trash"></i></button>
+                    </div>
+                `;
+                tastingItemsList.appendChild(itemRow);
+            });
+        }
+
+        const formattedTotal = `₹${total.toLocaleString("en-IN")}`;
+        if (tastingSummaryText) tastingSummaryText.textContent = `${totalCount} item${totalCount === 1 ? "" : "s"} selected`;
+        if (tastingTotalAmount) tastingTotalAmount.textContent = formattedTotal;
+        if (drawerTotalPrice) drawerTotalPrice.textContent = formattedTotal;
+
+        if (reserveWithTastingBtn) {
+            const summaryArray = selectedItems.map(i => `${i.qty}x ${i.name}`);
+            const queryParam = encodeURIComponent(summaryArray.join(", "));
+            reserveWithTastingBtn.href = `reservation.html?tasting=${queryParam}&total=${total}`;
+        }
+    }
+
+    // Add / Multiply items from Dish Cards
+    document.querySelectorAll(".add-tasting-btn").forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            const entry = this.closest(".menu-entry");
+            const card = entry.querySelector(".menu-card");
+            const name = card.dataset.name;
+            const price = parsePrice(card.dataset.price);
+            const category = (entry.getAttribute("data-category") || "item").toLowerCase().trim();
+
+            if (tastingCart[name]) {
+                tastingCart[name].qty += 1;
+            } else {
+                tastingCart[name] = { name, price, qty: 1, category };
+            }
+
+            renderTastingMenu();
+
+            const originalHTML = this.innerHTML;
+            this.innerHTML = `<i class="bi bi-check-circle-fill text-success me-1"></i> Added (${tastingCart[name].qty})`;
+            setTimeout(() => {
+                this.innerHTML = originalHTML;
+            }, 1000);
+        });
+    });
+
+    // Handle +, -, and delete inside Drawer
+    if (tastingItemsList) {
+        tastingItemsList.addEventListener("click", function (e) {
+            const incBtn = e.target.closest(".increase-qty-btn");
+            const decBtn = e.target.closest(".decrease-qty-btn");
+            const removeBtn = e.target.closest(".remove-item-btn");
+
+            if (incBtn) {
+                const name = incBtn.getAttribute("data-name");
+                if (tastingCart[name]) {
+                    tastingCart[name].qty += 1;
+                    renderTastingMenu();
+                }
+            } else if (decBtn) {
+                const name = decBtn.getAttribute("data-name");
+                if (tastingCart[name]) {
+                    tastingCart[name].qty -= 1;
+                    if (tastingCart[name].qty <= 0) {
+                        delete tastingCart[name];
+                    }
+                    renderTastingMenu();
+                }
+            } else if (removeBtn) {
+                const name = removeBtn.getAttribute("data-name");
+                delete tastingCart[name];
+                renderTastingMenu();
+            }
+        });
+    }
+
+    // Reset button
+    if (clearTastingBtn) {
+        clearTastingBtn.addEventListener("click", function () {
+            for (const key in tastingCart) delete tastingCart[key];
+            renderTastingMenu();
+        });
+    }
+    // Remove buttons handler
+    document.querySelectorAll(".remove-slot-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const course = this.getAttribute("data-course");
+            if (course && tastingState.hasOwnProperty(course)) {
+                tastingState[course] = null;
+                renderTastingMenu();
+            }
+        });
+    });
+
+    // Reset button handler
+    if (clearTastingBtn) {
+        clearTastingBtn.addEventListener("click", function () {
+            tastingState.starters = null;
+            tastingState.mains = null;
+            tastingState.desserts = null;
+            tastingState.drinks = null;
+            renderTastingMenu();
+        });
+    }
+
+    // Initial Filter Run
+    filterMenu();
+});
+</script>
+
+</body>
+</html>

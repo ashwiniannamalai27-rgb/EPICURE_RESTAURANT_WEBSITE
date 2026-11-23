@@ -1,0 +1,494 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ÉPICURE — thoughtful cuisine, warm hospitality and memorable dining experiences.">
+  <title>Gallery | ÉPICURE</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* GALLERY PAGE LUXURY STYLING */
+    .gallery-filter-btn {
+      color: #c5a059;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      background: transparent;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    .gallery-filter-btn:hover,
+    .gallery-filter-btn.active {
+      background-color: #c5a059;
+      color: #121212;
+      border-color: #c5a059;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25);
+    }
+
+    .gallery-grid-bento {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    @media (min-width: 992px) {
+      .gallery-grid-bento {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 300px;
+      }
+      .gallery-item-featured {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .gallery-item-tall {
+        grid-row: span 2;
+      }
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 100%;
+      min-height: 260px;
+      background: #181816;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: #c5a059;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-tag {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e6ca85;
+      margin-bottom: 4px;
+    }
+
+    .gallery-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
+
+    /* LIGHTBOX MODAL */
+    .lightbox-modal .modal-content {
+      background: #0d0d0d;
+      border: 1px solid #c5a059;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lightbox-modal img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: #c5a059;
+      font-size: 1.5rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: #c5a059;
+      color: #000;
+    }
+
+    .lightbox-nav-prev { left: 15px; }
+    .lightbox-nav-next { right: 15px; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-xl navbar-dark fixed-top navbar-custom">
+  <div class="container">
+    <a class="navbar-brand brand-font" href="index.html">ÉPICURE<span>.</span><small>FINE DINING</small></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNavigation">
+      <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="founders.html">Founders</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="technologies.html">Tech Stack</a></li>
+        <li class="nav-item ms-xl-3 my-2 my-xl-0"><a class="btn btn-gold btn-sm px-4" href="reservation.html">Reserve a table <i class="bi bi-arrow-up-right ms-1"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="--page-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85')">
+  <div class="container text-left">
+    <span class="eyebrow">A VISUAL TASTE</span>
+    <h1>Take a look<br><em>around.</em></h1>
+    <p>The space where you enjoy and cherish your joy ,happiness</p>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="section-pad">
+  <div class="container">
+
+    <div class="section-heading text-center">
+      <span class="eyebrow">INSIDE ÉPICURE</span>
+      <h2 class="section-title">Moments in focus.</h2>
+      <p class="body-copy">A curated collection of culinary art, dining salons, and ambient details.</p>
+    </div>
+
+    <!-- CATEGORY FILTER BUTTONS -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mt-4 mb-5" role="group" aria-label="Gallery category filters">
+      <button class="gallery-filter-btn active" data-filter="all">All Moments</button>
+      <button class="gallery-filter-btn" data-filter="spaces">Dining Spaces</button>
+      <button class="gallery-filter-btn" data-filter="culinary">Culinary Craft</button>
+      <button class="gallery-filter-btn" data-filter="beverage">Cellar & Bar</button>
+    </div>
+
+    <!-- BENTO GALLERY GRID -->
+    <div class="gallery-grid-bento" id="galleryGrid">
+
+      <!-- ITEM 1: FEATURED DINING ROOM -->
+      <div class="gallery-card gallery-item-featured" data-category="spaces" 
+           data-full="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=90"
+           data-title="The Grand Dining Salon" 
+           data-tag="Main Interior">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85" alt="The Grand Dining Salon">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Spaces & Design</span>
+          <h3 class="gallery-title">The Grand Dining Salon</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 2: KITCHEN ATELIER -->
+      <div class="gallery-card" data-category="culinary" 
+           data-full="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=90"
+           data-title="In the Kitchen Atelier" 
+           data-tag="Chefs at Work">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=85" alt="Chef preparing food">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Culinary Craft</span>
+          <h3 class="gallery-title">Kitchen Atelier</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 3: PLATED SIGNATURE -->
+      <div class="gallery-card" data-category="culinary" 
+           data-full="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1600&q=90"
+           data-title="Plated Seasonality" 
+           data-tag="Gourmet Plates">
+        <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=85" alt="Gourmet food">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Gastronomy</span>
+          <h3 class="gallery-title">Seasonal Course</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 4: AMBIENCE & CELLAR (TALL) -->
+      <div class="gallery-card gallery-item-tall" data-category="spaces" 
+           data-full="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=90"
+           data-title="Evening Architectural Light" 
+           data-tag="Atmosphere">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85" alt="Restaurant interior evening">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Evening Mood</span>
+          <h3 class="gallery-title">Ambient Glow</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 5: PASTRY & DESSERT -->
+      <div class="gallery-card" data-category="culinary" 
+           data-full="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1600&q=90"
+           data-title="Dark Single-Origin Cocoa" 
+           data-tag="Pastry Atelier">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=85" alt="Dark chocolate dessert">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Sweet Finish</span>
+          <h3 class="gallery-title">Single-Origin Cacao</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 6: BAR & BEVERAGE -->
+      <div class="gallery-card" data-category="beverage" 
+           data-full="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1600&q=90"
+           data-title="Zero-Proof Botanical Cooler" 
+           data-tag="Cocktails & Infusions">
+        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=85" alt="Refreshing beverage">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Cellar & Bar</span>
+          <h3 class="gallery-title">Botanical Infusions</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 7: WINE CELLAR -->
+      <div class="gallery-card" data-category="beverage" 
+           data-full="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=90"
+           data-title="The Reserve Wine Wall" 
+           data-tag="Sommelier Collection">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=85" alt="Wine cellar">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Cellar</span>
+          <h3 class="gallery-title">The Reserve Cellar</h3>
+        </div>
+      </div>
+
+      <!-- ITEM 8: CHEF DETAIL -->
+      <div class="gallery-card" data-category="culinary" 
+           data-full="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1600&q=90"
+           data-title="Artisan Plating Art" 
+           data-tag="Technique">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=85" alt="Chef finishing plate">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Artisan Detail</span>
+          <h3 class="gallery-title">The Final Garnish</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL DIALOG -->
+<div class="modal fade lightbox-modal" id="galleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content position-relative">
+      
+      <!-- Close button -->
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+      <!-- Navigation Arrows -->
+      <button class="lightbox-nav-btn lightbox-nav-prev" id="prevGalleryBtn" aria-label="Previous photo"><i class="bi bi-chevron-left"></i></button>
+      <button class="lightbox-nav-btn lightbox-nav-next" id="nextGalleryBtn" aria-label="Next photo"><i class="bi bi-chevron-right"></i></button>
+      
+      <!-- Modal Image View -->
+      <div class="text-center p-2">
+        <img id="galleryModalImage" src="" alt="Selected view" class="img-fluid rounded">
+      </div>
+      
+      <!-- Image Caption Bar -->
+      <div class="p-3 bg-black border-top border-secondary d-flex justify-content-between align-items-center">
+        <div>
+          <span class="text-gold small text-uppercase" id="galleryModalTag">CATEGORY</span>
+          <h4 class="brand-font text-white mb-0 fs-4" id="galleryModalTitle">Title</h4>
+        </div>
+        <a href="reservation.html" class="btn btn-outline-gold btn-sm rounded-pill px-3">Join Us <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5">
+        <a class="footer-brand brand-font" href="index.html">ÉPICURE<span>.</span></a>
+        <p class="footer-copy">Thoughtful cuisine. Genuine hospitality.<br>Memories made around the table.</p>
+        <div class="social-links mt-3">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>EXPLORE</h6>
+        <a href="about.html">Our story</a>
+        <a href="founders.html">Our people</a>
+        <a href="menu.html">The menu</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>VISIT</h6>
+        <a href="reservation.html">Reservations</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Guest stories</a>
+      </div>
+      <div class="col-lg-3">
+        <h6>OPENING HOURS</h6>
+        <p class="footer-copy mb-1">Tuesday – Sunday</p>
+        <p class="footer-copy">12:00 PM – 10:30 PM</p>
+        <a href="reservation.html" class="text-link">Plan your visit <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ÉPICURE. All rights reserved.</span>
+      <span>Made with care <i class="bi bi-heart-fill"></i></span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="siteToast" class="toast text-bg-dark border-gold" role="status" aria-live="polite" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">Thank you!</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- LIGHTBOX & FILTERING SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const filterBtns = document.querySelectorAll(".gallery-filter-btn");
+  const galleryCards = document.querySelectorAll(".gallery-card");
+  const modalElem = document.getElementById("galleryModal");
+  const modalImg = document.getElementById("galleryModalImage");
+  const modalTitle = document.getElementById("galleryModalTitle");
+  const modalTag = document.getElementById("galleryModalTag");
+  const prevBtn = document.getElementById("prevGalleryBtn");
+  const nextBtn = document.getElementById("nextGalleryBtn");
+
+  let currentVisibleCards = Array.from(galleryCards);
+  let currentIndex = 0;
+  let bsModalInstance = null;
+  if (modalElem) {
+    bsModalInstance = bootstrap.Modal.getOrCreateInstance(modalElem);
+  }
+
+  // 1. FILTER FUNCTIONALITY
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+      const filterValue = this.getAttribute("data-filter");
+
+      currentVisibleCards = [];
+      galleryCards.forEach(card => {
+        const category = card.getAttribute("data-category");
+        if (filterValue === "all" || category === filterValue) {
+          card.style.display = "block";
+          currentVisibleCards.push(card);
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // 2. LIGHTBOX VIEWER
+  function showImageAtIndex(idx) {
+    if (idx < 0) idx = currentVisibleCards.length - 1;
+    if (idx >= currentVisibleCards.length) idx = 0;
+    currentIndex = idx;
+
+    const targetCard = currentVisibleCards[currentIndex];
+    if (targetCard) {
+      modalImg.src = targetCard.getAttribute("data-full");
+      modalTitle.textContent = targetCard.getAttribute("data-title") || "ÉPICURE Moment";
+      modalTag.textContent = targetCard.getAttribute("data-tag") || "Fine Dining";
+    }
+  }
+
+  galleryCards.forEach(card => {
+    card.addEventListener("click", function () {
+      currentIndex = currentVisibleCards.indexOf(this);
+      if (currentIndex !== -1) {
+        showImageAtIndex(currentIndex);
+        if (bsModalInstance) bsModalInstance.show();
+      }
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      showImageAtIndex(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      showImageAtIndex(currentIndex + 1);
+    });
+  }
+
+  // Keyboard navigation (Left / Right Arrow)
+  document.addEventListener("keydown", function (e) {
+    if (modalElem && modalElem.classList.contains("show")) {
+      if (e.key === "ArrowLeft") {
+        showImageAtIndex(currentIndex - 1);
+      } else if (e.key === "ArrowRight") {
+        showImageAtIndex(currentIndex + 1);
+      }
+    }
+  });
+});
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
